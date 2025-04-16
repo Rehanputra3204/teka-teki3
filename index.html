@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Treasure Hunt - Tebak Gambar</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      border: 1px solid #00ff00;
+      padding: 30px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      background-color: #121212;
+      border-radius: 10px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 15px;
+      border: 2px solid #00ff00;
+      border-radius: 8px;
+    }
+
+    input[type="text"] {
+      background-color: #000;
+      border: 1px solid #00ff00;
+      color: #00ff00;
+      padding: 10px;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 1em;
+    }
+
+    button {
+      background-color: #00ff00;
+      color: #000;
+      font-weight: bold;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .reward {
+      margin-top: 20px;
+      display: none;
+      padding: 15px;
+      border: 1px solid #00ff00;
+      border-radius: 8px;
+    }
+
+    a {
+      color: #00ff00;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Treasure Hunt - Tebak Gambar</h2>
+    <p>Tebak isi gambar berikut untuk membuka harta karun:</p>
+    
+    <!-- Ganti link gambar sesuai kebutuhan -->
+    <img src="https://files.catbox.moe/u7vxva.jpg" alt="Teka-Teki Gambar">
+
+    <input type="text" id="answerInput" placeholder="Masukkan jawabanmu...">
+    <button onclick="checkAnswer()">Kirim Jawaban</button>
+
+    <div class="reward" id="rewardBox">
+      <p><strong>Jawaban kamu benar!</strong></p>
+      <p>Ini hadiahmu:</p>
+      <a href="https://link.dana.id/danakaget?c=sc9xxm4mg&r=gG6E86&orderId=20250416101214133515010300166662418067613" target="_blank">
+        Klik untuk klaim hadiah
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const jawaban = document.getElementById("answerInput").value.trim().toLowerCase();
+      const jawabanBenar = "buang ingus"; // Ganti dengan jawaban sesuai gambar
+
+      if (jawaban === jawabanBenar) {
+        document.getElementById("rewardBox").style.display = "block";
+      } else {
+        alert("Jawaban salah sayang");
+      }
+    }
+  </script>
+</body>
+</html>
